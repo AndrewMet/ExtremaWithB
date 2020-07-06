@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="Math.js" defer></script>
+    <script src="WolframBeta.js" defer></script>
+
+    <title>Практика, день 4</title>
+</head>
+<body>
+<h1 align="center">Метасов Андрей, день 4, вариант 11</h1>
+<h1 align="center">Нахождение экстремумов функций методом Ньютона</h1>
+<div align="center"><canvas id="C1" width="512" height="512"></canvas></div>
+<div style="display: inline-block">
+    <p>Введите функцию: </p>
+    <p><input type="text" size="40" id="func" value="sin(x)"> , b=<input type="text" size="10" id="b" value="1"></p>
+    <p>Границы по Х:  xmax: <input type="text" size="5" id="xmax" value="5"> , xmin: <input type="text" size="5" id="xmin" value="-5"> </p>
+    <p>Границы по Y:  ymax: <input type="text" size="5" id="ymax" value="5"> , ymin: <input type="text" size="5" id="ymin" value="-5"> </p>
+    <p>Кол-во пикселей по оси X: <input type="text" size="5" id="H" value="512" disabled></p>
+    <p>Кол-во пикселей по оси Y: <input type="text" size="5" id="W" value="512" disabled></p>
+    <p>Менее плотная сетка: <input type="checkbox" id="gridlow" onchange="grid()"> <input type="text" size="8" id="gridamp" value="10" style="display: none" ></p>
+    <input type="button" value="CALCULATE!!!!" onclick="CALCULATE()">
+    <input type="button" value="Autodraw!" onclick="autoDraw()">
+</div>
+<div style="display: inline-block; margin-left: 100px">
+    <p>Точность dx: <input type="text" size="20" id="dx" value="0.000000001"></p>
+    <input type="button" value="Найти все экстремумы!" onclick="Newton()">
+    <p>(Автоматически строит график производной, <input type="button" value="вернуть график функции" onclick="CALCULATE()">) </p>
+    <p id="derone" style="display: none">Производная функции:</p>
+    <p id="derholder"></p>
+</div>
+<div style="display: inline-block; margin-left: 200px">
+    <p>Предположительные экстремумы: </p>
+    <p id="pointsholder"></p>
+</div>
+</body>
+</html>
